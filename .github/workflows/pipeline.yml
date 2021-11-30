@@ -24,16 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      #Login to ACR
-      - uses: azure/docker-login@v1
-        with:
-          login-server: yourACRname.azurecr.io
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
-      
+            
       #Build docker image and push to ACR
       - run: |
-#          docker build . -t yourACRname.azurecr.io/appdb:${{ github.sha }}
           docker-compose up -d
-          docker push yourACRname.azurecr.io/appdb:${{ github.sha }}
