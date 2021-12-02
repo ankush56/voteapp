@@ -28,10 +28,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: 'Login via Azure CLI'
-      uses: azure/login@v1
+      uses: azure/login@releases/v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-        environment: eastus
+
       
     - name: 'Build and push image'
       uses: azure/docker-login@v1
