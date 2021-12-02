@@ -25,7 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      #Build docker image and push to ACR
+      # Build docker image and push to ACR
       - name: 'Login via Azure CLI'
           uses: azure/login@v1
           with:
